@@ -44,7 +44,7 @@ export const Connect = () => {
               />
             </a>
             <a
-              href="https://www.linkedin.com/in/joseph-dvorak-musician-educator-developer/"
+              href="https://www.linkedin.com/in/joseph-dvorak-developer/"
               target="_blank"
               rel="noopener noreferrer"
             >

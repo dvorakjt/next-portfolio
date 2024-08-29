@@ -1,6 +1,11 @@
 * {
-  -ms-overflow-style: none; /*hide scrollbar in IE and edge*/
-  scrollbar-width: none; /*hide scrollbar in firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* hide scrollbar in chrome */
+::-webkit-scrollbar {
+  display: none;
 }
 
 /* global classes */
@@ -49,11 +54,6 @@
 .selectedDM {
   background-color: #f1e740;
   color: #121212;
-}
-
-/* hide scrollbar in chrome */
-::-webkit-scrollbar {
-  display: none;
 }
 
 @keyframes fade-in {

@@ -21,20 +21,25 @@ export const ProjectInfoCard = ({ project }: ProjectInfoCardProps) => {
       }`}
     >
       {" "}
-      <p>
-        **Please note that I am currently in the process of refactoring the
-        projects in this section, and updating it.**
-      </p>
       <h6>README.md</h6>
       <hr />
-      <a href={project.github} target="_blank" rel="noopener noreferrer">
-        <Image
-          src={githubIcon}
-          alt={`View ${project.name} on Github`}
-          className={styles.githubIcon}
-        />
-      </a>
-      <ReactMarkdown linkTarget="_blank">{project.readMe}</ReactMarkdown>
+      {project.github && (
+        <a href={project.github} target="_blank" rel="noopener noreferrer">
+          <Image
+            src={githubIcon}
+            alt={`View ${project.name} on Github`}
+            className={styles.githubIcon}
+          />
+        </a>
+      )}
+      <ReactMarkdown
+        linkTarget="_blank"
+        className={
+          theme === "light" ? styles.markdownLight : styles.markdownDark
+        }
+      >
+        {project.readMe}
+      </ReactMarkdown>
     </div>
   );
 };

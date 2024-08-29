@@ -18,6 +18,14 @@
   width: 50px;
 }
 
+.markdownLight a {
+  color: black;
+}
+
+.markdownDark a {
+  color: white;
+}
+
 @media screen and (max-width: 1150px) {
   .fullCard {
     display: none;

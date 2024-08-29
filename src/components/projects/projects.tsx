@@ -6,35 +6,53 @@ import {
   useState,
   useLayoutEffect,
 } from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { AnimationContext } from "@/contexts/animation-context";
 import { ThemeContext } from "@/contexts/theme-context";
 import { ProjectsNavbar } from "./projects-navbar";
 import { ProjectViewport } from "./project-viewport/project-viewport";
 import { ProjectInfoCard } from "./project-info-card";
 import { MARKDOWN } from "../../markdown";
-import portScreen from "@/../public/static/images/portfolio-screenshot.png";
-import vunityScreen from "@/../public/static/images/vunity-home.png";
+import pianoWithAkira from "@/../public/static/images/piano-with-akira.png";
+import fullyFormed from "@/../public/static/images/fully-formed.png";
+import abcNotationTransposition from "@/../public/static/images/abc-notation-transposition.png";
 import githubIcon from "@/../public/static/images/github-icon.png";
 import styles from "./styles.module.css";
 
-// Array of projects to display
-const projects = [
+interface Project {
+  image: StaticImageData;
+  name: string;
+  link: string;
+  github?: string;
+  shortDesc: string;
+  readMe: string;
+}
+
+const projects: Project[] = [
   {
-    image: portScreen,
-    name: "Portfolio",
-    link: "https://joedvorak.dev",
-    github: "https://github.com/dvorakjt/portfolio",
-    shortDesc: "My React-powered portfolio",
+    image: pianoWithAkira,
+    name: "Piano with Akira",
+    link: "https://pianowithakira.com",
+    shortDesc:
+      "Lesson scheduling site for pianist/educator/YouTuber Akira Ikegami",
     readMe: MARKDOWN[0],
   },
   {
-    image: vunityScreen,
-    name: "Vunity",
-    link: "https://vunity.link",
-    github: "https://github.com/dvorakjt/vunity",
-    shortDesc: "Immersive Video Conferencing",
+    image: fullyFormed,
+    name: "Fully Formed",
+    github: "https://github.com/dvorakjt/fully-formed",
+    link: "https://www.npmjs.com/package/fully-formed",
+    shortDesc: "An object-oriented form state management library for React.",
     readMe: MARKDOWN[1],
+  },
+  {
+    image: abcNotationTransposition,
+    name: "ABC Notation Transposition",
+    github: "https://github.com/dvorakjt/abc-notation-transposition",
+    link: "https://www.npmjs.com/package/abc-notation-transposition",
+    shortDesc:
+      "A robust utility for transposing abc notation strings by any number of half steps. ",
+    readMe: MARKDOWN[2],
   },
 ];
 
@@ -102,17 +120,19 @@ export const Projects = () => {
         </h1>
       </div>
       <ProjectsNavbar projects={projects} setParentState={setCurrentProject} />
-      <a
-        href={projects[currentProject].github}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          src={githubIcon}
-          alt={`View ${projects[currentProject].name} on Github`}
-          className={styles.githubIcon}
-        />
-      </a>
+      {projects[currentProject].github && (
+        <a
+          href={projects[currentProject].github}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src={githubIcon}
+            alt={`View ${projects[currentProject].name} on Github`}
+            className={styles.githubIcon}
+          />
+        </a>
+      )}
       <div className={styles.spacer}></div>
       <h2>{projects[currentProject].name}</h2>
       <ProjectViewport
