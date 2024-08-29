@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 
 const text = [
   "Hello, World!",
-  "I'm Joe, a software engineer.",
+  "I'm Joe, a developer.",
   "Welcome to my portfolio!",
 ];
 

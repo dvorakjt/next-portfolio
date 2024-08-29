@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap");
-
 .toggler {
   position: absolute;
   bottom: 10px;
@@ -12,7 +10,7 @@
   margin-right: 10px;
   padding: 0;
   background-color: transparent;
-  font-family: "ZCOOL KuaiLe", cursive;
+  font-family: var(--font-family-z-cool), monospace;
   transition: font-size 0.5s ease;
 }
 

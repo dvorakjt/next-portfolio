@@ -1,6 +1,3 @@
-/* Import Space Mono font */
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
-
 /* Navbar goes at the top, is as wide as the screen, centers content and has a white bg */
 .nav {
   position: fixed;
