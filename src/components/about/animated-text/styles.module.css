@@ -1,0 +1,34 @@
+.typedText {
+  text-align: right;
+  border-right: 2px solid transparent;
+}
+
+.blinkingCursorLM {
+  border-right: 2px solid black;
+  animation: blink-cursor-lm 0.75s step-end infinite;
+}
+
+.blinkingCursorDM {
+  border-right: 2px solid white;
+  animation: blink-cursor-dm 0.75s step-end infinite;
+}
+
+@keyframes blink-cursor-lm {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+@keyframes blink-cursor-dm {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}

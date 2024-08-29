@@ -1,0 +1,132 @@
+.screenContainer {
+  /* position container 1 screen down from the top of the page */
+  position: absolute;
+  left: 0;
+  top: 200vh;
+
+  /* set the screen height to take up the entire viewport, or 650px at min */
+  height: 100vh;
+  width: 100%;
+  min-height: 650px;
+
+  z-index: 1;
+
+  overflow-x: hidden;
+
+  /* content not positioned absolutely will be centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.jumboSpacer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 28px;
+  z-index: 1;
+}
+
+.jumboSpacerLM {
+  background-color: #121212;
+  border-top: 1px solid #121212;
+}
+
+.jumboSpacerDM {
+  background-color: white;
+  border-top: 1px solid white;
+}
+
+/* invisible wrapper to contain jumbo text to display under clipped text */
+.jumboWrapperInvis {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  width: 100%;
+  height: 15%;
+  background-color: transparent;
+}
+
+.jumboWrapper {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  width: 100%;
+  height: 15%;
+  clip-path: polygon(100% 0%, 0% 0%, 100% 100%);
+}
+
+.jumboWrapperLM {
+  background-color: #121212;
+  color: white;
+}
+
+.jumboWrapperDM {
+  background-color: white;
+  color: black;
+}
+
+.jumboText {
+  font-size: 100px;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  right: 10px;
+}
+
+.githubIcon {
+  display: none;
+}
+
+.spacer {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .jumboText {
+    font-size: 60px;
+    top: 16px;
+    right: 0px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .spacer {
+    display: initial;
+    height: 15%;
+    width: 100%;
+  }
+
+  .githubIcon {
+    display: initial;
+    position: absolute;
+    top: 28%;
+    right: 10px;
+    height: 75px;
+    width: 75px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .spacer {
+    display: initial;
+    height: calc(15% + 75px);
+    min-height: 250px;
+    width: 100%;
+  }
+  .githubIcon {
+    top: 90%;
+    left: 0px;
+  }
+}
+
+/* if the screen height is 650px or less, the about screen will be 650px
+tall, so adjust the positioning of the projects screen accordingly */
+@media screen and (max-height: 650px) {
+  .screenContainer {
+    top: calc(100vh + 650px);
+  }
+}

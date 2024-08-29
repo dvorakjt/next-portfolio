@@ -1,0 +1,115 @@
+/* Import Space Mono font */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+/* Navbar goes at the top, is as wide as the screen, centers content and has a white bg */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: none;
+  width: 100%;
+  height: 60px;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* UL is centered with no bullet points and spaces content evenly */
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  flex: 0.6;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* nav li {
+  padding: 12px;
+} */
+
+/* default opacity for A is 0, keyframes fade-in changes this to 1 and fills forward */
+.nav a {
+  display: inline-block;
+  padding: 12px;
+  font-size: 24px;
+  text-decoration: none;
+  opacity: 0;
+}
+
+/* links inherit the color from their parent li when it is hovered over */
+.nav li:hover a {
+  color: inherit;
+  background-color: inherit;
+}
+
+/* the hamburger button should be hidden by default */
+.hamburger {
+  display: none;
+}
+
+/* make navbar responsive */
+
+/* On medium sized screens, widen the UL */
+@media screen and (max-width: 962px) {
+  .nav ul {
+    flex: 1;
+  }
+}
+
+/* On small screens, create a hamburger-style menu */
+@media screen and (max-width: 600px) {
+  .nav {
+    height: 56px;
+    padding: 0px;
+  }
+
+  .nav ul {
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  /* hide the list items and links if not open */
+  .nav li {
+    display: none;
+  }
+
+  .nav a {
+    display: none;
+  }
+
+  /* position and style the hamburger button */
+  .hamburger {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    border: none;
+    border-radius: 0;
+    height: 56px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 6px;
+    padding-top: 2px;
+  }
+
+  .hamburger:hover {
+    cursor: pointer;
+  }
+
+  /* when toggled open, display the li's and change their padding */
+  .responsive li {
+    display: initial;
+    margin-left: -4px;
+  }
+
+  /* also display the links */
+  .responsive a {
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+  }
+}

@@ -1,0 +1,77 @@
+.screenContainer {
+  /* position container 1 screen down from the top of the page */
+  position: absolute;
+  top: 100vh;
+  left: 0;
+
+  /* set the screen height to take up the entire viewport, or 650px at min */
+  height: 100vh;
+  width: 100%;
+  min-height: 650px;
+
+  /* hide overflow, and move the screen container to the back */
+  overflow: hidden;
+  z-index: -1;
+
+  /* content not positioned absolutely will be centered */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* invisible wrapper to contain jumbo text to display under clipped text */
+.jumboWrapperInvis {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  width: 100%;
+  height: 15%;
+  background-color: transparent;
+}
+
+/* clipped wrapper displaying partial text */
+.jumboWrapper {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  width: 100%;
+  height: 15%;
+  clip-path: polygon(100% 0%, 0% 0%, 100% 100%);
+}
+
+/* set the background and text for the clipped wrapper depending on the color mode */
+.jumboWrapperLM {
+  background-color: #121212;
+  color: white;
+}
+
+.jumboWrapperDM {
+  background-color: white;
+  color: black;
+}
+
+/* style the jumbo text */
+.jumboText {
+  font-size: 100px;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  right: 30px;
+}
+
+/* div at the bottom of the screen containing the screen toggler */
+.lowerAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+}
+
+@media screen and (max-width: 480px) {
+  .jumboText {
+    font-size: 60px;
+  }
+}

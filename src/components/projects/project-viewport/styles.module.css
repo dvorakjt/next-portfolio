@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap");
+
+.outerContainer {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  border-radius: 50%;
+  border: dashed 10px;
+  height: 520px;
+  width: 520px;
+}
+
+.innerContainer {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  border-radius: 50%;
+  border: solid 10px;
+  border-color: inherit;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.borderLM {
+  border-color: #121212;
+}
+
+.borderDM {
+  border-color: white;
+}
+
+.outerContainer a {
+  color: inherit;
+}
+
+@media screen and (max-width: 1150px) {
+  .outerContainer {
+    position: initial;
+    align-self: center;
+    justify-self: center;
+    height: 450px;
+    width: 450px;
+  }
+  .innerContainer {
+    position: initial;
+    align-self: center;
+    justify-self: center;
+    height: 430px;
+    width: 430px;
+  }
+}
+
+@media screen and (max-height: 705px) {
+  .outerContainer {
+    height: 450px;
+    width: 450px;
+  }
+  .innerContainer {
+    height: 430px;
+    width: 430px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .outerContainer {
+    height: 360px;
+    width: 360px;
+  }
+  .innerContainer {
+    height: 340px;
+    width: 340px;
+  }
+}

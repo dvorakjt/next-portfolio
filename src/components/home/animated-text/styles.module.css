@@ -1,0 +1,51 @@
+/* Import Space Mono font */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+.heading {
+  text-align: right;
+  font-size: 36px;
+  border-right: 2px solid transparent;
+}
+
+.subHeading {
+  text-align: right;
+  font-size: 24px;
+  border-right: 2px solid transparent;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blinkingCursorLM {
+  border-right: 2px solid black;
+  animation: blink-cursor-lm 0.75s step-end infinite;
+}
+
+.blinkingCursorDM {
+  border-right: 2px solid white;
+  animation: blink-cursor-dm 0.75s step-end infinite;
+}
+/* animations */
+
+@keyframes blink-cursor-lm {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+@keyframes blink-cursor-dm {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
